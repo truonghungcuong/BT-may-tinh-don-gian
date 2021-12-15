@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+</head>
+<style>
+    button{color: blue; width: 40px}
+</style>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="4"><input type="text" id="console" disabled></td>
+    </tr>
+    <tr>
+        <td><button onclick="pressButton('1')">1</button></td>
+        <td><button onclick="pressButton('2')">2</button></td>
+        <td><button onclick="pressButton('3')">3</button></td>
+        <td><button onclick="pressButton('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="pressButton('4')">4</button></td>
+        <td><button onclick="pressButton('5')">5</button></td>
+        <td><button onclick="pressButton('6')">6</button></td>
+        <td><button onclick="pressButton('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="pressButton('7')">7</button></td>
+        <td><button onclick="pressButton('8')">8</button></td>
+        <td><button onclick="pressButton('9')">9</button></td>
+        <td><button onclick="pressButton('*')">x</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clearConsole('C')">C</button></td>
+        <td><button onclick="pressButton('0')">0</button></td>
+        <td><button onclick="calculate('=')">=</button></td>
+        <td><button onclick="pressButton('/')">/</button></td>
+    </tr>
+</table>
+<script>
+    function pressButton(number){
+        let consle=document.getElementById("console");
+        consle.value += number;
+    }
+    function clearConsole(){
+        let console=document.getElementById("console");
+        console.value ="";
+    }
+    function calculate(){
+        let console=document.getElementById("console").value;
+        let rusult =eval(console);
+        document.getElementById("console").value= rusult;
+    }
+</script>
+</body>
+</html>
